@@ -1,0 +1,16 @@
+다시보기
+	맨앞 10분 못들음
+	함수 static
+	
+	window_open2
+	window_open3 + info
+	setIntervalTest3
+	setIntervalTest5
+	clear_interval2
+	
+6-21
+
+new Number(283); ->문자열 데이터로 숫자 만들 때 사용
+
+window.open()<-요즘은 replace 쓰지 않음
+

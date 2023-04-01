@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		var frames=[]
+		for (i=0; i<=14; i++){
+			frames.push(i+".png")
+		}
+		var count=0
+		setInterval(function(){
+			$('#image').attr('src',"./images/"+frames[count%frames.length])
+			count=count+1
+		},1000/20)
+	})
+</script>
+</head>
+<body>
+	<img id="image">
+</body>
+</html>

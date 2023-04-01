@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function makeStudent(name,kor,eng,math){
+		var obj={
+			name:name,
+			kor:kor,
+			eng:eng,
+			math:math,
+			getSum:function(){
+				return this.kor+this.eng+this.math;
+			},
+			getAvg:function(){
+				return this.getSum()/3;
+			},
+			toString:function(){
+				return this.name+"\t"+this.getSum()+"\t"+this.getAvg();
+			}
+		}
+		return obj;
+	}
+	
+	var list=[];
+	list.push(makeStudent("홍길동",100,80,60));
+	list.push(makeStudent("이순신",90,60,60));
+	list.push(makeStudent("유관순",95,70,90));
+	list.push(makeStudent("김유신",85,95,97));
+	list.push(makeStudent("강감찬",87,72,85));
+	
+	var output="이름\t총점\t평균\n";
+	for(i=0;i<list.length;i++){
+		output +=list[i].toString()+"\n"
+	}
+	
+	alert(output);
+</script>
+</head>
+<body>
+
+</body>
+</html>

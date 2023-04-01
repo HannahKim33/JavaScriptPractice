@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+  <script type="text/javascript">
+	window.onload=function(){
+		var button_a=document.getElementById("button_a");
+		var button_b=document.getElementById("button_b");
+		var counter_a=document.getElementById("counter_a");
+		var counter_b=document.getElementById("counter_b");
+		
+		button_a.onclick=function(){
+			counter_a.innerHTML=Number(counter_a.innerHTML)+1;	
+		}
+
+		button_b.onclick=function(){
+			counter_b.innerHTML=Number(counter_b.innerHTML)+1;
+			counter_a.innerHTML=Number(counter_a.innerHTML)+1;
+			button_a.onclick();
+		}
+	}
+  </script>
+ </head>
+ <body>
+	<button id="button_a">ButtonA</button>
+	<button id="button_b">ButtonB</button>
+	<h1>Button A-<span id="counter_a">0</span></h1>
+	<h1>Button B-<span id="counter_b">0</span></h1>
+ </body>
+</html>

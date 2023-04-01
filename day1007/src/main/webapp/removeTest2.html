@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+  <script type="text/javascript">
+	window.onload=function(){
+		var li_list=document.getElementsByTagName("li");
+		for (i=0; i<li_list.length; i++)
+		{
+			li_list[i].ondblclick=function(){
+				this.parentNode.removeChild(this);
+			}
+		}
+	}
+  </script>
+ </head>
+ <body>
+	<ul>
+		<li>김치찌개</li>
+		<li>된장찌개</li>
+		<li>볶음밥</li>
+		<li>탕수육</li>
+		<li>불고기백반</li>
+	</ul>
+ </body>
+</html>

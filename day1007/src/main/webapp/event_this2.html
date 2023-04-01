@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+	<script type="text/javascript">
+		window.onload=function(){
+			var arr=document.getElementsByTagName("h1");
+
+			function reset(){
+				for(i=0; i<arr.length; i++){
+					arr[i].style.color="black";
+					arr[i].style.backgroundColor="white";
+				}
+			}
+
+			for(i=0; i<arr.length; i++){
+				arr[i].onclick=function(){
+					reset();
+					this.style.color="orange";
+					this.style.backgroundColor="red";
+
+					var name=this.innerHTML;
+					document.getElementById("name").value=name;
+				}
+			}
+		}
+	</script>
+ </head>
+ <body>
+	<h1>홍길동</h1>
+	<h1>이순신</h1>
+	<h1>유관순</h1>
+	<h1>김유신</h1>
+	<hr>
+	<input type="text" id="name">
+ </body>
+</html>

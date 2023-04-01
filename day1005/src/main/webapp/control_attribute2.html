@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+<script type="text/javascript">
+	window.onload=function(){
+		document.getElementById("btn").onclick=function(){
+			var image=document.getElementById("image");
+			//image.src="sun.png";
+			image.setAttribute("src","moon.png");
+		}
+		document.getElementById("btn_small").onclick=function(){
+			var image=document.getElementById("image");
+			//image.width=50;
+			//image.height=50;
+			image.setAttribute("width",100);
+			image.setAttribute("height",100);
+		}
+	}
+</script>
+ </head>
+ <body>
+	<img id="image">
+	<button id="btn">이미지 출력</button>
+	<button id="btn_small">크기 작게</button>
+ </body>
+</html>

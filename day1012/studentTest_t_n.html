@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	.select{
+		background: yellow;
+	}
+</style>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		var input=$("input[type=text]")
+		$('#btnAdd').click(function(){
+			var tr=$('<tr></tr>')
+								//.addClass('student')
+			var tot=0;
+			for(i=0; i<input.length; i++){
+				if(i!=0){
+					tot+=Number($(input[i]).val())
+				}
+				var td=$('<td></td>').html($(input[i]).val())
+				$(tr).append(td)
+			}
+			$(tr).append($("<td></td>").html(tot))
+			$(tr).append($("<td></td>").html(Math.round(tot/3)))
+			$('tbody').append(tr)
+			
+			for(i=0;i<input.length;i++){
+				$(input[i]).val("")
+			}
+			$(input[0]).focus()
+		})
+		
+		$(document).on('click','tr',function(){
+			
+			$('tr').removeClass('select')
+			$(this).addClass('select')
+
+			/*
+			$('#name').val($(data[0]).html())
+			$('#kor').val($(data[1]).html())
+			$('#eng').val($(data[2]).html())
+			$('#math').val($(data[3]).html())
+			*/
+			
+			var data=$(this).find('td')
+			
+			for(i=0; i<input.length; i++){
+				$(input[i]).val($(data[i]).html())
+			}
+			
+		})
+	});
+</script>
+</head>
+<body>
+	이름 : <input type="text" id="name"><br>
+	국어 : <input type="text" id="kor"><br>
+	영어 : <input type="text" id="eng"><br>
+	수학 : <input type="text" id="math"><br>
+	<button id='btnAdd'>추가</button>
+
+	<table border='1' width='80%'>
+		<thead>
+			<tr>
+				<th>이름</th>
+				<th>국어</th>
+				<th>영어</th>
+				<th>수학</th>
+				<th>총점</th>
+				<th>평균</th>
+			</tr>
+		</thead>
+		<tbody>
+		</tbody>
+	</table>
+</body>
+</html>

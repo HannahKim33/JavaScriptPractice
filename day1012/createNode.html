@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$('#btnAdd').click(function(){
+			var li=$('<li></li>').html($('#name').val())
+			$('#list').append(li)
+			$('#name').val("")
+			$('#name').focus()
+		})
+		
+		/*
+		$('li').click(function(){
+			alert('ok')
+		})
+		//미래에 만들어진 li에는 이벤트가 동작하지 않음
+		*/
+	});
+</script>
+</head>
+<body>
+	<ul id='list'>
+		<li>유관순</li>
+		<li>이순신</li>
+	</ul>
+	<input type='text' id='name'>
+	<button id='btnAdd'>추가</button>
+</body>
+</html>

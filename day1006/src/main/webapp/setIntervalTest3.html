@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+//한글자씩 나오게 하기
+	var data=[
+		"[단독] 한예종의 편견…장애인 없는 과 “이성적 작업 못해서”,", 
+		"[속보] 법원, 이준석 가처분 신청 기각·각하… '정진석 비대위' 유효", 
+		"“무식한 소리…” 대통령실 직통한 감사원 2인자, 유병호는 누구?"
+	];
+	window.onload=function(){
+		var news=document.getElementById("news");
+		var i=0;
+		var n=1;
+		setInterval(function(){
+			var row=data[i];
+			var txt=row.substr(0,n);
+			news.value=txt;
+			n++;
+			if(n>row.length){
+				i++;
+				n=1;
+			}
+			if(i>=data.length){
+				i=0;
+			}
+		},50);
+		
+	}
+</script>
+</head>
+<body>
+	실시간 뉴스: <input type="text" id="news" size="70">
+</body>
+</html>

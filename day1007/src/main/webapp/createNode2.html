@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+  <script type="text/javascript">
+	window.onload=function(){
+		document.getElementById("btn").onclick=function(){
+			var data=document.getElementById("data").value;
+			var li=document.createElement("li");
+			var txt=document.createTextNode(data);
+			li.appendChild(txt);
+			document.getElementById("list")
+
+		}
+  </script>
+ </head>
+ <body>
+	<h2>점심 메뉴를 추천해 주세요</h2>
+	<ul>
+		<li>김치찌개</li>
+		<li>된장찌개</li>
+		<li id="li"></li>
+	</ul>
+	<hr>
+	<input type="text" id="data">
+	<button id="btn">추가</button>
+ </body>
+</html>

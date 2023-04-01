@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+	<script type="text/javascript">
+		window.onload=function(){
+			var arr=document.getElementsByTagName("h1");
+			for(i=0; i<arr.length; i++){
+				arr[i].onclick=function(){
+					var name=this.innerHTML;
+					document.getElementById("name").value=name;
+				}
+			}
+		}
+
+//객체의 배열로는 forEach를 사용할 수 없음
+/*
+			arr.forEach(function(item){
+				item.onclick=function(){
+					var name=this.innerHTML;
+					document.getElementById("name").value=name;
+				};
+			});
+		}*/
+	</script>
+ </head>
+ <body>
+	<h1>홍길동</h1>
+	<h1>이순신</h1>
+	<h1>유관순</h1>
+	<h1>김유신</h1>
+	<hr>
+	<input type="text" id="name">
+ </body>
+</html>

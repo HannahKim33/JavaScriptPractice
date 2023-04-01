@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+수1: <input type="number" id="n1"><br>
+수2: <input type="number" id="n2"><br>
+수3: <input type="number" id="n3"><br>
+<button id="btn">큰수찾기</button>
+<hr>
+결과: <span id="result"></span>
+<script type="text/javascript">
+	document.getElementById("btn").onclick=function(){
+
+		var n1=Number(document.getElementById("n1").value);
+		var n2=Number(document.getElementById("n2").value);
+		var n3=Number(document.getElementById("n3").value);
+		
+		var max=0;
+		
+		if(n1>n2){
+			if(n1>n3){
+				max=n1;
+			}else{
+				max=n3;
+			}
+		}else{
+			if(n2>n3){
+				max=n2;
+			}else{
+				max=n3;
+			}
+		}
+		document.getElementById("result").innerHTML=max;
+	}
+</script>
+</body>
+</html>

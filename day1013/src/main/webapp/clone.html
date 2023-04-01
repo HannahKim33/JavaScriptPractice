@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+<script type="text/javascript">
+$(function(){
+	setTimeout(function(){
+		//그냥 이동
+		//$('div').append($('h1'))
+		
+		//복사
+		$('div').append($('h1').clone())
+	},3000)
+})
+</script>
+</head>
+<body>
+	<h1>HEADER</h1>
+	<hr/>
+	<div></div>
+	<hr/>
+</body>
+</html>

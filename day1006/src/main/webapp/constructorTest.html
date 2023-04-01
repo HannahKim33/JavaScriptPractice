@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function Student(name,kor,eng,math){
+		this.name=name;
+		this.kor=kor;
+		this.eng=eng;
+		this.math=math;
+		this.getSum=function(){
+			return this.kor+this.eng+this.math;
+		}
+		this.getAvg=function(){
+			return this.getSum()/3;
+		}
+		this.toString=function(){
+			return this.name+"\t"+this.getSum()+"\t"+this.getAvg();
+		}
+	}
+	
+	var list=[];
+	list.push(new Student("홍길동",100,80,90));
+	list.push(new Student("이순신",90,90,97));
+	list.push(new Student("유관순",70,100,100));
+	list.push(new Student("김유신",75,75,60));
+	list.push(new Student("강감찬",60,72,85));
+	
+	var output="이름\t총점\t평균\n";
+	for(i=0;i<list.length;i++){
+		output +=list[i].toString()+"\n"
+	}
+	
+	alert(output);
+</script>
+</head>
+<body>
+
+</body>
+</html>

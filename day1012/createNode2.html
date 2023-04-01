@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	.highlight{
+		background: pink;
+	}
+	.select{
+		background: red;
+	}
+</style>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		
+		var selLi;
+		
+		$('#btnAdd').click(function(){
+			var li=$('<li></li>').html($('#name').val())
+			$('#list').append(li)
+			$('#name').val("")
+			$('#name').focus()
+		})
+		
+		//document의 후손 li에 대해 이벤트 걸기 (미래에 만들어지는 li에도 이벤트 적용됨)
+		//원래 만들어져 있는 것(document)에 이벤트를 걸어야 함
+		$(document).on('click','li', function(){
+			$('#name').val($(this).html())
+			$('li').removeClass('select')
+			$(this).addClass('select')
+			selLi=$(this)
+		})
+		
+		$(document).on('mouseover','li',function(){
+			$(this).addClass("highlight")
+		})
+		
+		$(document).on('mouseleave','li',function(){
+			$(this).removeClass('highlight')
+		})
+		
+		$("#btnUpdate").click(function(){
+			$(selLi).html($("#name").val())
+		})
+		
+		$("#btnDelete").click(function(){
+			$(selLi).remove()
+		})
+		
+	});
+</script>
+</head>
+<body>
+	<ul id='list'>
+		<li>유관순</li>
+		<li>이순신</li>
+	</ul>
+	<input type='text' id='name'>
+	<button id='btnAdd'>추가</button>
+	<button id='btnUpdate'>변경</button>
+	<button id='btnDelete'>삭제</button>
+	
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+<script type="text/javascript">
+/*$(function(){
+	$('#name').attr("required","required")
+})*/
+window.onload=function(){
+	var name=document.getElementById('name')
+	name.setAttribute("required","required")
+}
+</script>
+</head>
+<body>
+	<form method="post" action="result.jsp">
+		<label>이름:</label><input type="text" name="name" id="name">
+		<input type="submit" value="확인">
+	</form>
+</body>
+</html>

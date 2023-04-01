@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+  <script type="text/javascript">
+	function getMax(){
+		var a=Number(document.getElementById("n1").value);
+		var b=Number(document.getElementById("n2").value);
+		var max=a
+		if(max<b){
+			max=b;
+		}
+		alert(max);
+	}
+  </script>
+ </head>
+ <body>
+	수1: <input type="text" id="n1"></input>
+	수2: <input type="text" id="n2"></input>
+	<button id="btn">큰수찾기</button>
+	
+ </body>
+</html>

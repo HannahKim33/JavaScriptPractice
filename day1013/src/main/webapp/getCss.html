@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	.first{
+		color: red;
+	}
+	.second{
+		color: green;
+	}
+	.third{
+		color: blue;
+	}
+</style>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+<script type="text/javascript">
+$(function(){
+	var data=$('h1').css("color")	//첫번째 꺼만 읽어옴
+	alert(data)
+})
+</script>
+</head>
+<body>
+	<h1 class="first">홍길동</h1>
+	<h1 class="second">이순신</h1>
+	<h1 class="third">유관순</h1>
+</body>
+</html>

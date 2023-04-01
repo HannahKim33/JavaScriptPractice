@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	window.onload = function(){
+		var data = "<h1>hello</h1>";
+		
+		document.getElementById("btnText").onclick = function(){
+			document.getElementById("result").textContent = data;
+		};
+		
+		document.getElementById("btnHtml").onclick = function(){
+			document.getElementById("result").innerHTML = data;
+		};
+		
+	}
+</script>
+</head>
+<body>
+	
+	<div id="result"></div>
+	<hr>
+	<button id="btnText">textContent</button>
+	<button id="btnHtml">innerHTML</button>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+/*
+	window.onload=function(){
+		var name=opener.document.getElementById("name").value;
+		document.getElementById("name").value=name;
+	}
+	*/
+	window.onload=function(){
+		document.getElementById("btnOK").onclick=function(){
+			var name=document.getElementById("name").value;
+			var age=document.getElementById("age").value;
+			opener.document.getElementById("name").value=name;
+			opener.document.getElementById("name").value=age;
+			window.close();			
+		}
+	}
+</script>
+</head>
+<body>
+	이름 : <input type="text" id="name"></input><br>
+	나이 : <input type="text" id="age"></input><br>
+	<button id="btnOK">확인</button>
+</body>
+</html>

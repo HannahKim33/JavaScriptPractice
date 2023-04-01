@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		for(i=0; i<10; i++){
+			var h1=$("<h1></h1>").html("hello")
+			$(h1).css({
+				backgroundColor: 'black',
+				color: 'red'
+			})
+			$('body').append(h1)
+		}
+	})
+</script>
+</head>
+<body>
+
+</body>
+</html>

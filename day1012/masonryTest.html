@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	*{
+		margin: 0;
+		padding: 0;
+	}
+	
+	.box{
+		background: black;
+		margin:5px;
+		float: left;
+	}
+</style>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+<script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		for(i=0;i<100;i++){
+			var div=$("<div></div>").addClass('box').css({
+				width:100,
+				height: Math.floor(Math.random()*100)+50
+			})
+			$('body').append(div)
+		}
+		
+		
+		$('body').masonry({
+			columnWidth:110
+		})
+		
+	});
+</script>
+</head>
+<body>
+
+</body>
+</html>

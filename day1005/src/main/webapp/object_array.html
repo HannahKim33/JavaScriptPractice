@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+  <script type="text/javascript">
+  	var data=[
+		{dno:10,dname:"총무팀",dloc:'서교동'},
+		{dno:20,dname:"기획팀",dloc:'판교'},
+		{dno:30,dname:"개발1팀",dloc:'서교동'},
+		{dno:40,dname:"개발2팀",dloc:'판교'},
+		{dno:50,dname:"개발3팀",dloc:'판교'},
+	];
+
+	window.onload=function(){
+		document.getElementById("btn").onclick=function(){
+			var tag="";
+			tag+="<table border='1'>";
+			for (i=0;i<data.length ;i++ )
+			{
+				var row=data[i];
+				tag +="<tr>";
+				tag +="<td>"+row.dno+"</td>";
+				tag +="<td>"+row.dname+"</td>";
+				tag +="<td>"+row.dloc+"</td>";
+				tag+="</tr>";
+			}
+			tag+="</table>";
+
+			document.getElementById("result").innerHTML=tag;
+		}
+	}
+</script>
+ </head>
+ <body>
+	<div id="result"></div>
+	<hr>
+	<button id="btn">데이터 출력</button>
+ </body>
+</html>

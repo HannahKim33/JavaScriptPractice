@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	window.onload=function(){
+		document.getElementById("f").onsubmit=function(){
+			var age=document.getElementById("age").value;
+			if(isNaN(age)){
+				alert("나이는 숫자로 입력하세요!");
+				return false; //기본이벤트 제거
+			}
+			
+		}
+	}
+</script>
+</head>
+<body>
+<form id="f" action="result.jsp" method="post">
+		이름: <input type="text" id="name" name="name"><br>
+		나이: <input type="text" id="age" name="age"><br>
+		<input type="submit" value="확인">
+		<input type="reset" value="취소">
+	</form>
+	<hr>
+	<font color="red">*PS:나이는 숫자로 입력하세요!</font>
+</body>
+</html>

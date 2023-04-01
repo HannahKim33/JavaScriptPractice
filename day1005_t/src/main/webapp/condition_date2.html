@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<img  src="moon.png" id="result">
+
+	<script type="text/javascript">
+		var today = new Date();
+		var hours = today.getHours();
+		
+		if( hours <= 18 ){
+			document.getElementById("result").src = "sun.png";
+		}else{
+			document.getElementById("result").src = "moon.png";
+		}
+			
+	</script>
+</body>
+</html>

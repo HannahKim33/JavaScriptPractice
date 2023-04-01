@@ -1,0 +1,21 @@
+create table goods(
+	no number primary key,
+	name varchar2(50),
+	qty number,
+	price number
+);
+
+insert into goods values(1, '축구공1', 10, 15000);
+insert into goods values(2, '축구공2', 20, 25000);
+insert into goods values(3, '축구공3', 15, 35000);
+insert into goods values(4, '축구공4', 25, 65000);
+insert into goods values(5, '축구공5', 100, 55000);
+
+
+alter table goods add fname varchar2(50);
+
+update goods set fname='ball1.jpg' where no=1;
+update goods set fname='ball2.jpg' where no=2;
+update goods set fname='ball3.jpg' where no=3;
+update goods set fname='ball4.jpg' where no=4;
+update goods set fname='ball5.jpg' where no=5;

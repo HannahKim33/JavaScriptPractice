@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script type="text/javascript">
+	var data = [];
+	data.push({name:"홍길동",kor:100,eng:98,math:60});
+	data.push({name:"연하진",kor:95,eng:98,math:98});
+	data.push({name:"구지연",kor:76,eng:96,math:90});
+	data.push({name:"나선주",kor:95,eng:92,math:92});
+	data.push({name:"윤아린",kor:85,eng:98,math:98});
+	data.push({name:"윤명월",kor:82,eng:88,math:92});
+	data.push({name:"김미화",kor:88,eng:86,math:88});
+	data.push({name:"김연화",kor:97,eng:74,math:92});
+	data.push({name:"박아현",kor:45,eng:88,math:95});
+	data.push({name:"서준서",kor:90,eng:72,math:78});
+	
+	//console.log(data);
+	
+	for(i in data){
+		data[i].getSum = function(){
+			return this.kor + this.eng + this.math;
+		}
+		
+		data[i].getAvg = function(){
+			return Math.round( this.getSum() / 3);
+		}
+	}
+	
+	var output = "이름\t총점\t평균\n";
+	
+	for(i in data){
+		with(data[i]){
+			output += name + "\t"+ getSum() + "\t" + getAvg() + "\n";
+		}
+	}
+	alert(output);
+	
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	.item{
+		background: orange;
+	}
+	.select{
+		color: blue;
+	}
+</style>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+<script type="text/javascript">
+$(function(){
+	setTimeout(function(){
+		//$('h1').removeClass("select")
+		$('h1').removeAtrr("class")	//왜안없어져..
+	},3000)
+})
+</script>
+</head>
+<body>
+	<h1 class="item">홍길동</h1>
+	<h1 class="item select">이순신</h1>
+	<h1 class="item">김유신</h1>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+<script type="text/javascript">
+	var arr=['./images/ball1.jpg','./images/ball2.jpg','./images/ball3.jpg']
+	$(function(){
+		//$('img').attr("src",'ball1.jpg')	//<=모두 ball1이 됨
+		$('img').attr("src",function(index){
+			return arr[index]
+		})
+	})
+</script>
+</head>
+<body>
+	<img >
+	<img >
+	<img >
+</body>
+</html>

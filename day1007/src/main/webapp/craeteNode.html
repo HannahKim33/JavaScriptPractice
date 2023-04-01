@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+  <script type="text/javascript">
+  	window.onload=function(){
+		document.getElementById("btn1").onclick=function(){
+			var str="<h1>Hello</h1>";
+			document.getElementById("wrap1").innerHTML=str;
+		}
+		document.getElementById("btn1").onclick=function(){
+			var h1=document.createElement("h1");
+			var txt=document.createTextNode("hello");
+			h1.appendChild(txt);
+			document.getElementById("wrap2").appendChild(h1);
+		}
+	}
+	</script>
+ </head>
+ <body>
+  <div id="wrap1"></div>
+  <button id="btn1">노드생성</button>
+  <hr>
+  <div id="wrap2"></div>
+  <button id="btn2">노드생성</button>
+ </body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+  <script type="text/javascript">
+  	window.onload=function(){
+		setInterval(function(){
+			var now=new Date();
+			document.getElementById("clock").innerHTML=now.toString(); //.toString()생략가능
+		}, 1000);
+	}
+</script>
+ </head>
+ <body>
+	<h1 id="clock"></h1>
+ </body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+<script type="text/javascript">
+$(function(){
+	$('h3').filter(function(index){
+		return index%3==0
+	}).css({
+		backgroundColor: 'black',
+		color: 'white'
+	})
+})
+</script>
+</head>
+<body>
+	<h3>hello</h3>
+	<h3>hello</h3>
+	<h3>hello</h3>
+	<h3>hello</h3>
+	<h3>hello</h3>
+	<h3>hello</h3>
+	<h3>hello</h3>
+	<h3>hello</h3>
+	<h3>hello</h3>
+	<h3>hello</h3>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		var input_1=$('input')[0]
+		var input_2=$('input')[1]
+		
+		$(input_1).keyup(function(){
+			//console.log(input_1.value.length)
+			if(input_1.value.length>=6){
+				input_2.focus()
+			}
+		})
+		
+		$(input_2).keyup(function(event){
+			console.log(event.keyCode)
+			if(event.keyCode==8 && input_2.value.length==0){
+				input_1.focus()
+			}
+		})
+	})
+</script>
+</head>
+<body>
+	<input type="text" maxlength='6'>
+	<span>-</span>
+	<input type="text" maxlength='7'>
+</body>
+</html>

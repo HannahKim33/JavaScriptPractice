@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	.member{
+		border: 1px solid red;
+		margin: 10px;
+		width: 150px;
+		height:150px;
+		float: left;
+	}
+	#java{
+		clear:both;
+	}
+</style>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$('.member').click(function(){
+			var name=$(this).find('h1').html()	//눌러진 div에서 h1 찾기->텍스트 가져오기
+			var addr=$(this).find('h2').html()
+		
+			//$('input:nth-child(1)').val(name)
+			//$('input:nth-child(2)').val(addr)
+			var arr=$('input')
+			$(arr[0]).val(name)
+			$(arr[1]).val(addr)
+		});
+	})
+</script>
+</head>
+<body>
+
+	이름: <input type='text'><br>
+	주소: <input type='text'><br>
+	<div class="member">
+		<h1>홍길동</h1>
+		<h2>서울</h2>
+	</div>
+	
+	<div class="member">
+		<h1>이순신</h1>
+		<h2>대구</h1>
+	</div>
+	
+	<div class="member">
+		<h1>유관순</h1>
+		<h2>광주</h2>
+	</div>
+	
+	<div id="java">java</div>
+	<div>oracle</div>
+	<div>html</div>
+</body>
+</html>

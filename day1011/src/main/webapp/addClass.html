@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	.high_light{
+		background: pink;
+	}
+	.high_light2{
+		background: red;
+	}
+</style>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$('li').mouseover(function(){
+			$(this).addClass("high_light")
+		}).mouseleave(function(){
+			$(this).removeClass("high_light")
+		})
+		$('li').click(function(){
+			$("#text").val($(this).text())
+			$('li').removeClass("high_light2")
+			$(this).addClass("high_light2")
+		})
+	})
+</script>
+</head>
+<body>
+	<ul>
+		<li>행복</li>
+		<li>건강</li>
+		<li>재미</li>
+		<li>사람</li>
+		<li>돈</li>
+	</ul>
+	<hr>
+	<input type="text" id="text">
+</body>
+</html>

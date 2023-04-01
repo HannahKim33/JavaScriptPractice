@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		//var data="<a href=''>네이버</a>"	//바깥이 ""면 안은 '' vice versa
+		var data="hello" //tag 없으면 text나 html이나 똑같
+		$("h1:nth-child(1)").text(data)	//글자취급
+		$("h1:nth-child(2)").html(data)	//html 태그 반영
+	})
+</script>
+</head>
+<body>
+	<h1>Header - 1</h1>
+	<h1>Header - 2</h1>
+</body>
+</html>

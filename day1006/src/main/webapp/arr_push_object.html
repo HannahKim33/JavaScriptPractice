@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	var data = [];
+	data.push({name:"홍길동",kor:100,eng:98,math:60});
+	data.push({name:"연하진",kor:95,eng:98,math:98});
+	data.push({name:"구지연",kor:76,eng:96,math:90});
+	data.push({name:"나선주",kor:95,eng:92,math:92});
+	data.push({name:"윤아린",kor:85,eng:98,math:98});
+	data.push({name:"윤명월",kor:82,eng:88,math:92});
+	data.push({name:"김미화",kor:88,eng:86,math:88});
+	data.push({name:"김연화",kor:97,eng:74,math:92});
+	data.push({name:"박아현",kor:45,eng:88,math:95});
+	data.push({name:"서준서",kor:90,eng:72,math:78});
+	
+	window.onload=function(){
+		document.getElementById("btn").onclick=function(){
+			for(i=0;i<data.length;i++){
+				var student=data[i];
+				var tr=document.createElement("tr");
+				var td1=document.createElement("td");
+				var td2=document.createElement("td");
+				var td3=document.createElement("td");
+				var td4=document.createElement("td");
+				var txt1=document.createTextNode(student.name);
+				var txt2=document.createTextNode(student.kor);
+				var txt3=document.createTextNode(student.eng);
+				var txt4=document.createTextNode(student.math);
+				td1.appendChild(txt1);
+				td2.appendChild(txt2);
+				td3.appendChild(txt3);
+				td4.appendChild(txt4);
+				tr.appendChild(td1);
+				tr.appendChild(td2);
+				tr.appendChild(td3);
+				tr.appendChild(td4);
+				document.getElementById("list").appendChild(tr);
+			}
+		}
+	}
+</script>
+</head>
+<body>
+	<table border="1" width="60%">
+		<thead>
+			<tr>
+				<th>이름</th>
+				<th>국어</th>
+				<th>영어</th>
+				<th>수학</th>
+			</tr>
+		</thead>
+		<tbody id="list"></tbody>
+	</table>
+	<hr>
+	<button id="btn">학생 정보 출력</button>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

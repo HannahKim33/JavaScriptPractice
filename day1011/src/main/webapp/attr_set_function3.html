@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+<script type="text/javascript">
+	var arr=['ball3.jpg','ball4.jpg','ball5.jpg']
+	$(function(){
+		$('img').attr({
+			src: function(idx){
+				return "./images/"+arr[idx]
+			},
+			width:'100'
+		})
+	})
+</script>
+</head>
+<body>
+	<img >
+	<img >
+	<img >
+</body>
+</html>

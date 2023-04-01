@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script type="text/javascript">
+	var student = {
+		name:"홍길동",
+		kor:80,
+		eng:90,
+		math:100
+	}
+	
+	var output = "";
+	with(student){
+		output += "이름:"+name+"\n";
+		output += "국어:"+kor+"\n";
+		output += "영어:"+eng+"\n";
+		output += "수학:"+math+"\n";
+	}
+	
+	
+	/*output += "이름:"+student.name+"\n";
+	output += "국어:"+student.kor+"\n";
+	output += "영어:"+student.eng+"\n";
+	output += "수학:"+student.math+"\n";*/
+	
+	alert(output);
+</script>
+</body>
+</html>

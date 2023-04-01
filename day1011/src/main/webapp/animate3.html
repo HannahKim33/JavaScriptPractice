@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	#box{
+		width: 100px;
+		height: 100px;
+		background: red;
+		position: absolute;
+		left: 100px;
+		height:100px;
+	}
+	
+	#wrap{
+		position: relative;
+		width: 960px;
+		height: 800px;
+	}
+</style>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$('#move').click(function(){
+			$('#box').animate({
+				left: 500
+			},1000).animate({
+				left: 100
+			},1000)
+		})
+	})
+</script>
+</head>
+<body>
+	<button id="move">이동</button>
+	<div id="wrap">
+		<div id="box"></div>
+	</div>
+	
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+  <script type="text/javascript">
+  	window.onload=function(){
+		document.getElementById("btn").onclick=function(){
+			var name=document.getElementById("name").value
+			var kor=document.getElementById("kor").value
+			var eng=document.getElementById("eng").value
+			var math=document.getElementById("math").value
+			var total=Number(kor)+Number(eng)+Number(math);
+			var avg=(total/3).toFixed(1);
+
+			var tr=document.createElement("tr")
+			var td1=document.createElement("td")
+			var td2=document.createElement("td")
+			var td3=document.createElement("td")
+			var td4=document.createElement("td")
+			var td5=document.createElement("td")
+			var td6=document.createElement("td")
+
+			var name_node=document.createTextNode(name);
+			var kor_node=document.createTextNode(kor);
+			var eng_node=document.createTextNode(eng);
+			var math_node=document.createTextNode(math);
+			var total_node=document.createTextNode(total);
+			var avg_node=document.createTextNode(avg);
+
+			td1.appendChild(name_node);
+			td2.appendChild(kor_node);
+			td3.appendChild(eng_node);
+			td4.appendChild(math_node);
+			td5.appendChild(total_node);
+			td6.appendChild(avg_node);
+
+			tr.appendChild(td1);
+			tr.appendChild(td2);
+			tr.appendChild(td3);
+			tr.appendChild(td4);
+			tr.appendChild(td5);
+			tr.appendChild(td6);
+
+			document.getElementById("thead").appendChild(tr);
+
+			document.getElementById("name").value=""
+			document.getElementById("kor").value=""
+			document.getElementById("eng").value=""
+			document.getElementById("math").value=""
+		}
+
+	}
+	</script>
+ </head>
+ <body>
+	<table border="1" width="80%">
+		<thead>
+			<tr>
+				<th>이름</th>
+				<th>국어</th>
+				<th>영어</th>
+				<th>수학</th>
+				<th>총점</th>
+				<th>평균</th>
+			</tr>
+		</thead>
+		<tbody id="tbody"></tbody>
+	</table>
+	<hr>
+	이름 : <input type="text" id="name"><br>
+	국어 : <input type="text" id="kor"><br>
+	영어 : <input type="text" id="eng"><br>
+	수학 : <input type="text" id="math"><br>
+	<button id="btn">추가</button>
+
+	
+ </body>
+</html>

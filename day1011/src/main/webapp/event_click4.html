@@ -1,0 +1,93 @@
+<!-- 표 클릭하면 텍스트 값에 들어가게 하기/ 배경색 지정 -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	.high_light{
+		background: yellow
+	}
+	.select{
+		background: pink
+	}
+</style>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		
+		/*
+		$('tbody').find('tr').click(function(){
+		})
+		//이렇게해도 되고 아래처럼해도 됨
+		*/
+		
+		$('tbody>tr').click(function(){
+			$('tbody>tr').removeClass('select')
+			$(this).addClass('select')
+			
+			var td_list=$(this).find("td");
+			var input_list=$('input')
+			for (i=0; i<td_list.length; i++){
+				$(input_list[i]).val($(td_list[i]).html())
+			}
+		})
+		
+		$('tbody>tr').mouseover(function(){
+			$(this).addClass('high_light')
+		})
+		$('tbody>tr').mouseleave(function(){
+			$(this).removeClass('high_light')
+		})
+	})
+	
+	/* 이건 왜 안될까?
+			var arr=$(this).find('tr').find('td').text()
+			console.log(arr[0])
+			$('#name').val(arr[0])
+			$('#kor').val(arr[1])
+			$('#eng').val(arr[2])
+	*/
+	
+</script>
+</head>
+<body>
+	이름: <input type="text" id="name"><br>
+	국어: <input type="text" id="kor"><br>
+	영어: <input type="text" id="eng"><br>
+	수학: <input type="text" id="math"><br>
+	<table border='1' width='80%'>
+		<thead>
+			<tr>
+				<th>이름</th>
+				<th>국어</th>
+				<th>영어</th>
+				<th>수학</th>
+			</tr>	
+		</thead>
+		<tbody>
+			<tr id="you">
+				<td>유관순</td>
+				<td>80</td>
+				<td>90</td>
+				<td>100</td>
+			</tr>
+			
+			<tr>
+				<td>이순신</td>
+				<td>90</td>
+				<td>100</td>
+				<td>70</td>
+			</tr>
+			
+			<tr>
+				<td>김유신</td>
+				<td>100</td>
+				<td>100</td>
+				<td>100</td>
+			</tr>
+		</tbody>
+	</table>
+	
+</body>
+</html>

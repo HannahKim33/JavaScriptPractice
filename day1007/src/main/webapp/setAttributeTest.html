@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+  <script type="text/javascript">
+	var arr=[
+		{name:"홍길동",kor:80,eng:100,math:100},
+		{name:"이순신",kor:90,eng:70,math:85},
+		{name:"유관순",kor:97,eng:40,math:87},
+		{name:"김유신",kor:87,eng:65,math:90},
+		{name:"강감찬",kor:100,eng:99,math:60},
+	];
+
+	window.onload=function(){
+		arr.forEach(function(item,idx){
+			var tr=document.createElement("tr");
+			tr.setAttribute("data_index",idx)
+
+			tr.onclick=function(){
+				var data_index=this.getAttribute("data_index");
+				var row=arr[data_index];
+				document.getElementById("name").value=row.name;
+				document.getElementById("kor").value=row.kor;
+				document.getElementById("eng").value=row.eng;
+				document.getElementById("math").value=row.math;
+
+
+			}
+
+			var td1=document.createElement("td");
+			var td2=document.createElement("td");
+			var td3=document.createElement("td");
+			var td4=document.createElement("td");
+			
+			var txt1=document.createTextNode(item.name);
+			var txt2=document.createTextNode(item.kor);
+			var txt3=document.createTextNode(item.eng);
+			var txt4=document.createTextNode(item.math);
+
+			td1.appendChild(txt1);
+			td2.appendChild(txt2);
+			td3.appendChild(txt3);
+			td4.appendChild(txt4);
+
+			tr.appendChild(td1);
+			tr.appendChild(td2);
+			tr.appendChild(td3);
+			tr.appendChild(td4);
+
+			document.getElementById("list").appendChild(tr);
+
+
+		})
+	}
+
+  </script>
+ </head>
+ <body>
+	<table border="1" width="80%">
+		<thead>
+			<tr>
+				<th>이름</th>
+				<th>국어</th>
+				<th>영어</th>
+				<th>수학</th>
+			</tr>
+		</thead>
+		<tbody id="list"></tbody>
+	</table>
+	<hr>
+	이름 : <input type="text" id="name"><br>
+	국어 : <input type="text" id="kor"><br>
+	영어 : <input type="text" id="eng"><br>
+	수학 : <input type="text" id="math"><br>
+	<button id="btn">추가</button>
+ </body>
+</html>

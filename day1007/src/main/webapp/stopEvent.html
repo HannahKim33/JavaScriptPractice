@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+  <style type="text/css">
+	div{
+		width: 400px;
+		height: 400px;
+		background: yellow;
+	}
+	p{
+		width: 200px;
+		height: 200px;
+		background: pink;
+	}
+  </style>
+  <script type="text/javascript">
+  window.onload=function(){
+	document.getElementById("div").onclick=function(){
+		alert("div");
+	};
+
+	document.getElementById("p").onclick=function(e){
+		alert("p");
+		e.stopPropagation();
+	};
+	}
+  </script>
+ </head>
+ <body>
+	<div id="div">
+		div입니다.
+		<p id="p">p입니다.</p>
+	</div>
+ </body>
+</html>

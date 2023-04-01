@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	수: <input type="text" id="num"></input>
+	<button id="btn">확인</button>
+	<hr>
+	결과: <span id="result"></span>
+	<script type="text/javascript">
+		document.getElementById("btn").onclick=function(){
+			var n=Number(document.getElementById("num").value);
+			var sum=0;
+			for(var i=1;i<=n;i++){
+				sum=sum+i;
+			}
+			document.getElementById("result").innerHTML=sum;
+		}
+	</script>
+</body>
+</html>

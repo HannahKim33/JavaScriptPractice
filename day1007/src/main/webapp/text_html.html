@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		var data="<h1>Hello jQuery</h1>"
+
+		$("#btn1").click(function(){
+			$("#title1").html(data); //매개변수가 없으면 읽어오는 것
+		});
+
+		$("#btn2").click(function(){
+			$("#title2").text(data);
+		});
+	});
+</script>
+ </head>
+ <body>
+  <div id="title1">내용이 써집니다.</div>
+  <div id="title2">내용이 써집니다.</div>
+  <button id="btn1">title1</button>
+  <button id="btn2">title2</button>
+
+ </body>
+</html>

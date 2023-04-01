@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	
+	<div id="now"></div>
+
+	<script type="text/javascript">
+		
+		
+		setInterval(function(){
+			var today = new Date();
+			
+			var year = today.getFullYear();
+			var month = today.getMonth() + 1;
+			var date = today.getDate();
+			var hours = today.getHours();
+			var minutes = today.getMinutes();
+			var seconds = today.getSeconds();
+			
+			document.getElementById("now").innerHTML = 
+				year+"년"+month+"월"+date+"일 "+hours+"시"+minutes+"분"+seconds+"초";
+			
+		}, 1000);
+	</script>
+	
+	
+</body>
+</html>
+
+

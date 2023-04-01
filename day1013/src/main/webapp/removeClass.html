@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	.item{
+		background: yellow;
+	}
+	.select{
+		color:red;
+	}
+</style>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+<script type="text/javascript">
+$(function(){
+	setTimeout(function(){
+		$('h1').removeClass('select')
+	},3000)
+})
+</script>
+</head>
+<body>
+	<h1 class="item">사과</h1>
+	<h1 class="item select">포도</h1>
+	<h1 class="item">수박</h1>
+</body>
+</html>

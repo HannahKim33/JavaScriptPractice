@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$('a').click(function(event){
+			$(this).css({
+				background: "red",
+				color: "white"
+			})
+			alert("ok")
+			event.preventDefault()
+		})
+	})
+</script>
+</head>
+<body>
+	<a href="http://www.hanb.co.kr">한빛미디어</a>
+</body>
+</html>

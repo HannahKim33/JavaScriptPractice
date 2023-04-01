@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	div.item:nth-child(1){
+		background: blue;
+	}
+	div.item:nth-child(2){
+		background: gray;
+	}
+	div.item:nth-child(3){
+		background: pink;
+	}
+	
+	#wrap{
+		margin: auto;
+		width: 700px;
+		height: 600px;
+		position: relative;
+	}
+	
+	#left_button, #right_button{
+		font-size:100px;
+		color: gray;
+		float: left;
+		padding-top: 200px;
+	}
+	
+	
+	.slider{
+		float: left;
+	}
+	
+	
+</style>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+<script type="text/javascript">
+$(function(){
+	var width = $("[data-role='slider']").attr("data-width");
+	var height = $("[data-role='slider']").attr("data-height");
+	var count = $("[data-role='slider'] div.item").length;
+		
+	$("[data-role='slider']").css({
+		position:"relative",
+		overflow:'hidden',
+		width:width,
+		height:height		
+	}).find(".container").css({
+		position:'absolute',
+		width:count*width,
+		overflow:'hidden'
+	}).find(".item").css({
+		width:width,
+		height:height,
+		float:'left'
+	});
+	
+	var currentPage = 0;
+	var changePage = function(){
+		$("[data-role='slider'] > .container").animate({
+			left:-currentPage * width
+		},500);
+	}
+	
+	$("#left_button").click(function(){
+		if(currentPage>0){
+			currentPage = currentPage - 1;
+			changePage();
+		}
+	});
+	
+	$("#right_button").click(function(){
+		if(currentPage < count-1  ){
+			currentPage = currentPage + 1;
+			changePage();
+		}
+	});
+	
+	
+	
+	
+});
+</script>
+</head>
+<body>
+
+	<div id="wrap">
+		<div id="left_button"> < </div>
+		<div class="slider"  data-role="slider" data-width="500" data-height="500">
+			<div class="container">
+				<div class="item">
+					<img src="./images/ball1.jpg" width="500" height="500">				
+				</div>
+				<div class="item">				
+					<img src="./images/ball2.jpg" width="500" height="500">
+				</div>
+				<div class="item">
+					<img src="./images/ball3.jpg" width="500" height="500">
+				</div>
+			</div>
+		</div>
+		<div id="right_button"> > </div>
+	</div>
+</body>
+</html>
+
+
+
+
+

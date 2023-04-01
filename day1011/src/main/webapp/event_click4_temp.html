@@ -1,0 +1,58 @@
+<!-- 표 클릭하면 텍스트 값에 들어가게 하기/ 배경색 지정 -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+</style>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$('tbody').find('tr').click(function(){
+			var arr=$('tbody').find('tr').find('td').text()
+		})
+	})
+	
+</script>
+</head>
+<body>
+	이름: <input type="text" id="name"><br>
+	국어: <input type="text" id="kor"><br>
+	영어: <input type="text" id="eng"><br>
+	수학: <input type="text" id="math"><br>
+	<table border='1' width='80%'>
+		<thead>
+			<tr>
+				<th>이름</th>
+				<th>국어</th>
+				<th>영어</th>
+				<th>수학</th>
+			</tr>	
+		</thead>
+		<tbody>
+			<tr id="you">
+				<td>유관순</td>
+				<td>80</td>
+				<td>90</td>
+				<td>100</td>
+			</tr>
+			
+			<tr>
+				<td>이순신</td>
+				<td>90</td>
+				<td>100</td>
+				<td>70</td>
+			</tr>
+			
+			<tr>
+				<td>김유신</td>
+				<td>100</td>
+				<td>100</td>
+				<td>100</td>
+			</tr>
+		</tbody>
+	</table>
+	
+</body>
+</html>

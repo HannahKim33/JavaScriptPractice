@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		var data='홍길동'
+		$('#h1').html(data)		//html이나 text 사용 가능. val 안됨
+		$('#p').html(data)		//html이나 text 사용 가능. val 안됨
+		$('#input').val(data)	//html이나 text 안됨. val 사용
+	})
+</script>
+</head>
+<body>
+	<h1 id='h1'></h1>
+	<p id='p'></p>
+	<input type="text" id='input'>	<!--입력양식-> val(자바스크립트의 value)  -->
+</body>
+</html>

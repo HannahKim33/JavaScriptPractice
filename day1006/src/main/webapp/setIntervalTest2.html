@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+//한글자씩 나오게 하기
+	var data="오늘 방과후에 프로젝트 관련 회의가 있으니 남아 주세요!"
+	window.onload=function(){
+		var news=document.getElementById("news");
+		var n=1;
+		setInterval(function(){	
+			var txt=data.substr(0,n);
+			n++;
+			news.value=txt;
+			if(n>data.length){
+				n=1;
+			}
+		},200);
+	}
+</script>
+</head>
+<body>
+	실시간 뉴스: <input type="text" id="news" size="70">
+</body>
+</html>

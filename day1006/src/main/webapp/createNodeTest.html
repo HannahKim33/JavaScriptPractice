@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	window.onload=function(){
+		document.getElementById("btn").onclick=function(){
+			var h1=document.createElement("h1");
+			var txt=document.createTextNode("Hello Korea");
+			h1.appendChild(txt);
+			document.getElementById("content").appendChild(h1);
+		}
+	}
+</script>
+</head>
+<body>
+	<div id="content"></div>
+	<hr>
+	<button id="btn">노드 생성</button>
+</body>
+</html>

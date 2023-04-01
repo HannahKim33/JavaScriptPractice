@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	var data = [];
+	function add(){
+		console.log("동작함");
+		var name = document.getElementById("name").value;
+		var kor = document.getElementById("kor").value;
+		var eng = document.getElementById("eng").value;
+		var math = document.getElementById("math").value;
+		
+		var obj = {name:name, kor:kor, eng:eng, math:math};
+		data.push(obj);
+		
+	}
+	
+	
+	function arr_write(){
+		console.log("출력함.")
+		console.log(data);
+	}
+</script>
+</head>
+<body>
+	이름: <input type="text" id="name"><br>
+	국어: <input type="text" id="kor"><br>
+	영어: <input type="text" id="eng"><br>
+	수학: <input type="text" id="math"><br>
+	<button id="btnAdd" onclick="add()">배열에 담기</button>
+	<button id="btnPrint" onclick="arr_write()">배열을 출력</button>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

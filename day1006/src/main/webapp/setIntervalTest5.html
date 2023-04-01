@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function makeGoods(no, name, qty, price){
+		var attribute={
+			no: no,
+			name: name,
+			qty: qty,
+			price: price
+		};
+	}
+	var data=[];
+	data.push(makeGoods(1,'축구공1',10,15000));
+	data.push(makeGoods(2,'축구공2',20,25000));
+	data.push(makeGoods(3,'축구공3',15,35000));
+	data.push(makeGoods(4,'축구공4',25,65000));
+	data.push(makeGoods(5,'축구공5',100,55000));
+	
+	window.onload=function(){
+		var ball=document.getElementById("ball");
+		var no=document.getElementById("no");
+		var name=document.getElementById("name");
+		var qty=document.getElementById("qty");
+		var price=document.getElementById("price");
+		var i=0;
+		
+		setInterval(function(){
+			var g=data[i];
+			ball.src=g.fname;
+			no.innerHTML=g.no;
+			name.innerHTML=g.name;
+			qty.innerHTML=g.qty;
+			price.innerHTML=g.price;
+			i++;
+			if(i>=data.length){
+				i=0;
+			}
+		},1000);
+	}
+</script>
+</head>
+<body>
+	<img src="ball1.jpg" id="ball" width="150" height="150">
+	<hr>
+	상품번호: <span id="no"></span><br>
+	상품명: <span id="name"></span><br>
+	수량: <span id="qty"></span><br>
+	가격: <span id="price"></span><br>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	.box{
+		width:250px;
+		height:100px;
+		border: 1px solid pink;
+		padding: 20px;
+		margin: 10px;
+		border-radius: 10px;
+		float: left;
+	}
+	.info{
+		float:right;
+	}
+	.long{
+		height: 210px;
+		
+	}
+	
+</style>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+<script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		var arr=[
+			{no:1,name:'축구공1',qty:10,price:10000,fname:'ball1.jpg'},
+			{no:2,name:'축구공2',qty:10,price:10000,fname:'ball2.jpg'},
+			{no:3,name:'축구공3',qty:10,price:10000,fname:'ball3.jpg'},
+			{no:4,name:'축구공4',qty:10,price:10000,fname:'ball4.jpg'},
+			{no:5,name:'축구공5',qty:10,price:10000,fname:'ball5.jpg'},
+			{no:6,name:'유니폼1',qty:10,price:65000,fname:'cloth1.jpg'},
+			{no:7,name:'유니폼2',qty:10,price:65000,fname:'cloth2.jpg'},
+			{no:8,name:'유니폼3',qty:10,price:65000,fname:'cloth3.jpg'},
+			{no:9,name:'유니폼4',qty:10,price:65000,fname:'cloth4.jpg'},
+			{no:10,name:'유니폼5',qty:10,price:65000,fname:'cloth5.jpg'},
+			{no:11,name:'축구화1',qty:10,price:97000,fname:'shoe1.jpg'},
+			{no:12,name:'축구화2',qty:10,price:98000,fname:'shoe2.jpg'},
+			{no:13,name:'축구화3',qty:10,price:99000,fname:'shoe3.jpg'},
+			{no:14,name:'축구화4',qty:10,price:120000,fname:'shoe4.jpg'},
+			{no:15,name:'축구화5',qty:10,price:125000,fname:'shoe5.jpg'},
+			{no:16,name:'스타킹1',qty:10,price:8000,fname:'stock1.jpg'},
+			{no:17,name:'스타킹2',qty:10,price:8000,fname:'stock2.jpg'},
+			{no:18,name:'스타킹3',qty:10,price:8000,fname:'stock3.jpg'},
+			{no:19,name:'스타킹4',qty:10,price:8000,fname:'stock4.jpg'},
+			{no:20,name:'스타킹5',qty:10,price:8000,fname:'stock5.jpg'},
+		]
+		
+		function appendGoods(){
+			for(i=0; i<arr.length; i++){
+				var img=$('<img>').attr({
+					src:'./images/'+arr[i].fname,
+					width:100,
+					height:100
+				})
+				var no=$('<div></div>').html('번호: '+arr[i].no)
+				var name=$('<div></div>').html('이름: '+arr[i].name)
+				var qty=$('<div></div>').html('수량: '+arr[i].qty)
+				var price=$('<div></div>').html('가격: '+arr[i].price)
+				
+				var info=$('<div></div>').addClass('info')
+				
+				var div=$('<div></div>').addClass('box')
+				
+				if(i%3==0){
+					$(div).addClass('long')
+					$(img).attr("height",150)
+				}
+				info.append(no)
+				info.append(name)
+				info.append(qty)
+				info.append(price)
+				
+				div.append(img)
+				div.append(info)
+	
+				$('body').append(div)	
+			}
+		}
+		
+		appendGoods()
+		$('body').masonry()
+	});
+</script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	//아이디,암호,이름,전화는 반드시 입력해야 함
+	//아이디의 첫글자는 영문, 길이는 6글자 이상 12자 이하
+	//암호와 암호확인은 같고 암호의 길이 6~12
+	//나이는 숫자
+	//이메일에는 @,.을 포함, @dhk .사이에 1글자이상 포함
+	window.onload=function(){
+		document.getElementById("f").onsubmit=function(){
+			var id=document.getElementById("id").value;
+			var ch=id.charAt(0);
+			if(!((ch>='a' && ch<='z')||(ch>='A' && ch<='Z'))){
+				alert("아이디의 첫글자는 영문으로 입력하세요");
+				return false;
+			}
+			if(id.length<6 || id.length>12){
+				alert("아이디는 6~12글자로 입력하세요");
+				return false;
+			}
+			var pwd=document.getElementById("pwd").value;
+			var pwdRe=document.getElementById("pwdRe").value;
+			if(pwd!=pwdRe){
+				alert("비밀번호가 일치하지 않습니다");
+				return false;
+			}
+			if(pwd.length<6 || pwd.length>12){
+				alert("비밀번호는 6~12자리로 입력하세요");
+				return false;
+			}
+			var age=document.getElementById("age").value;
+			if(isNaN(age)){
+				alert("나이는 숫자로 입력하세요");
+				return false;
+			}
+			
+			
+			var email=document.getElementById("email").value;
+			/*
+			if(email.indexOf("@")==-1 || email.indexOf(".")==-1){
+				alert("이메일 형식이 올바르지 않습니다");
+				return false;
+			}
+			console.log(email.indexOf("@"));
+			if(email.indexOf(".")-email.indexOf("@")<2){
+				alert("이메일 형식이 올바르지 않습니다");
+				return false;
+			}
+			*/
+			
+			var idx_1=email.indexOf("@");
+			var idx_2=email.indexOf(".");
+			if(idx_1!=-1 && idx_2!=-1 && (idx_2-idx_1)>2){
+			}else{
+				alert("이메일 형식이 올바르지 않습니다");
+				return false;
+			}
+			
+
+		}	
+	}
+</script>
+</head>
+<body>
+	<form id="f" action="result.jsp" method="post">
+		아이디: <input type="text" id="id" name="id" required="required"><br>
+		암호: <input type="password" id="pwd" name="pwd" required="required"><br>		
+		암호확인: <input type="password" id="pwdRe"><br>		
+		이름: <input type="text" name="name" required="required"><br>
+		나이: <input type="number" id="age" name="age"><br>
+		이메일: <input type="email" id="email" name="email"><br>
+		전화: <input type="text" name="phone" required="required"><br>
+		<input type="submit" value="확인">
+		<input type="reset" value="취소">
+	</form>
+</body>
+</html>

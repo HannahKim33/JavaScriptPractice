@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+<script type="text/javascript">
+$(function(){
+	var student={name:'홍길동'}
+	student.age=20
+	student.addr='서울'
+	console.log(student)
+	$.extend(student,{
+		kor:100,
+		eng:80,
+		math:60
+	})
+	
+	console.log(student)
+})
+</script>
+</head>
+<body>
+
+</body>
+</html>

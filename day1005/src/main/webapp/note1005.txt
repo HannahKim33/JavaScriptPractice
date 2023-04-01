@@ -1,0 +1,14 @@
+다시보기
+	control_text: 안바뀌는 게 맞나?
+	objectTest
+
+String을 숫자로 바꾸기
+	Number('100')
+	eval('100')
+	parseInt('100')
+
+	number('100원')=>NaN
+	parseInt('100원')=>숫자 100
+
+
+w3school.com

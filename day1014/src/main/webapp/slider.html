@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	*{
+		margin: 0px;
+		padding: 0px;
+	}
+	
+	.animation_canvas{
+		position: relative;
+		width: 600px;
+		height: 400px;
+		overflow: hidden;
+	}
+	.slider_panel{
+		width: 2400px;
+		position: relative;
+	}
+	.slider_image{
+		float: left;
+		width: 600px;
+		height: 400px;
+	}
+	
+	.slider_text_panel{
+		position: absolute;
+		left: 50px;
+		top: 200px;
+	}
+	.slider_text{
+		position: absolute;
+		width: 250px;
+		height: 150px;
+	}
+	.control_panel{
+		position: absolute;
+		top: 380px;
+		left: 270px;
+		height: 13px;
+		overflow: hidden;
+	}
+	.control_button{
+		width: 12px;
+		height: 46px;
+		position: relative;
+		
+		float: left;
+		cursor: pointer;
+		background: url('./images/point_button.png')
+	}
+	
+	.control_button:hover{
+		top:-16px;
+	}
+	.control_button:active{
+		top:-31px;
+	}
+	.active{
+		top: -31px;
+	}
+	
+</style>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+<script type="text/javascript">
+$(function(){
+	$(".slider_text").css("left",-300)
+	
+	$(".slider_text").each(function(index){
+		$(this).attr("data-index",index)
+	})
+	
+	$('.control_button').each(function(index){
+		$(this).attr("data-index",index)
+	})
+	
+	function moveSlider(index){
+		var willMoveLeft=-(index*600)
+		$('.slider_panel').animate({left:willMoveLeft},'slow')
+		$('.control_button[data-index='+index+']').addClass('active')
+		$('.control_button[data-index!='+index+']').removeClass('active')
+		
+		$(".slider_text[data-index="+index+"]").show().animate({left:0},'slow')
+		$(".slider_text[data-index!="+index+"]").hide().animate({left:-300},'slow')
+	}
+	
+	$(".control_button").click(function(){
+		var index=$(this).attr("data-index")
+		moveSlider(index)
+	})
+	
+	var randomNumber=Math.round(Math.random()*3)
+	moveSlider(randomNumber)
+})
+</script>
+</head>
+<body>
+	<h1>Test Header</h1>
+	<div class="animation_canvas">
+		<div class="slider_panel">
+			<img src="./images/ball1.jpg" class="slider_image">
+			<img src="./images/ball2.jpg" class="slider_image">
+			<img src="./images/ball3.jpg" class="slider_image">
+			<img src="./images/ball4.jpg" class="slider_image">
+		</div>
+		<div class="slider_text_panel">
+			<div class="slider_text">
+				<h1>DoItCoding</h1>
+				<p>이명진, 신윤경, 유근형, 조영민, 황은선</p>
+			</div>
+			<div class="slider_text">
+				<h1>SemiFinal</h1>
+				<p>정선기, 구승현, 이종현, 임수린, 최효주</p>
+			</div>
+			<div class="slider_text">
+				<h1>Systemout</h1>
+				<p>이정화, 김영빈, 이호형, 정성현, 황은솔</p>
+			</div>
+			<div class="slider_text">
+				<h1>4LPHA</h1>
+				<p>함예이, 권현욱, 김고운, 김동민, 문현빈</p>
+			</div>
+		</div>
+		<div class="control_panel">
+			<div class="control_button"></div>
+			<div class="control_button"></div>
+			<div class="control_button"></div>
+			<div class="control_button"></div>
+		</div>
+	</div>
+	<h1>Test Header</h1>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		var data={
+				DoItCoding:['이명진','신윤경','유근형','조영민','황은선'],
+				SemiFinal:['정선기','구승현','이종현','임수린','최효주'],
+				Systemout:['이정화','김영빈','이호형','정성현','황은솔'],
+				LPHA4:['함예이','권현욱','김고운','김동민','문현빈']
+		}
+		
+		
+		
+		for(i in data){
+			var option=$('<option></option>').html(i)
+			$('#team').append(option)
+		}
+		
+		$('#team').change(function(){
+			$('#member').empty()
+			var team=$("#team > option:selected").val()
+			var arr=data[team]
+			for(i=0; i<arr.length; i++){
+				var name=arr[i]
+				$("#member").append($('<option></option>').html(name))
+			}
+		})
+		
+		
+		/*
+		for(i=0;i<data.length;i++){
+			var op=$('<option></option>').html(data[i])
+			
+			$('#team').append(op)
+		}
+		*/ 
+		
+	});
+</script>
+</head>
+<body>
+1
+	<select id='team'></select>
+	<select id="member"></select>
+<!-- data 객체의 속성만큼 반복문으르 수행하여 각각의 속성을 콤보박스로 만들기 -->
+</body>
+</html>

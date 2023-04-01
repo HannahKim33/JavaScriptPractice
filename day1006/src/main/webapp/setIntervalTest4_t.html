@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	var data=["ball1.jpg","ball2.jpg","ball3.jpg","ball4.jpg","ball5.jpg"];
+	i=0;
+	window.onload=function(){
+		var ball=document.getElementById("img");
+		setInterval(function(){
+			var fname=data[i];
+			ball.src=fname;
+			i++;
+			if(i>=data.length){
+				i=0;
+			}
+		},200);
+	
+	
+	
+}
+</script>
+</head>
+<body>
+	<img src="ball1.jpg" id="img">
+</body>
+</html>

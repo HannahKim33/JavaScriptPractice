@@ -1,0 +1,45 @@
+파일순서
+
+ex01
+select
+attr_get
+attr_set
+attr_set_function1
+2
+3
+4
+5
+style_set
+style_set_object
+styleSetFunction
+textHtmlSet
+html_text_val
+addClass
+event_click 1 
+2 
+3 
+4 ***
+event_hover
+2 **
+event_on *
+event_on2 *
+event_on_object *
+animate_toggle
+animate
+2
+3
+----------------event_preventDefault가 빠짐
+animate_stop 1 *
+2 *
+autoFocus *
+frame_animation * %부분
+createNode
+2
+createNode_each
+
+jQuery 쓰는 이유:
+	대상이 되는 객체 선택 쉽게
+	동적인 노드(DOM 객체) 조작 용이
+	이벤트 연결 용이
+	시각적 효과 용이
+	Ajax 통신 용이

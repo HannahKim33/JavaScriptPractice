@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	window.onload=function(){
+		var w;
+		document.getElementById("btnNew").onclick=function(){
+			w=window.open("","","width=600, height=300");
+		}
+		document.getElementById("btnAdd").onclick=function(){
+			w.document.write("<h1>hello javaScript </h1>");
+		}
+	}
+</script>
+</head>
+<body>
+<button id="btnNew">새창 열기</button>
+<button id="btnAdd">노드 생성</button>
+</body>
+</html>

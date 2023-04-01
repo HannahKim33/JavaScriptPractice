@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	window.onload=function(){
+		var time=document.getElementById("time");
+		var myID;
+		
+		document.getElementById("btn_start").onclick=function(){
+			myID=setInterval(function(){
+				var today=new Date();
+				var hh=today.getHours();
+				var mm=today.getMinutes();
+				var ss=today.getSeconds();
+				var str=hh+":"+mm+":"+ss;
+				time.innerHTML=str;
+				//time.innerHTML=new Date();
+			},1000);
+		}
+		
+		document.getElementById("btn_stop").onclick=function(){
+			clearInterval(myID);
+		}
+
+	}
+</script>
+</head>
+<body>
+	현재시각: <span id="time"></span>
+	<hr>
+	<button id="btn_start">타이머 가동</button>
+	<button id="btn_stop">타이머 중지</button>
+</body>
+</html>

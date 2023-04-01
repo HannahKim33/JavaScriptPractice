@@ -1,0 +1,33 @@
+파일순서
+createNode
+2 *
+3
+studentTest *
+infinityScroll *
+goodsTest
+lightboxTest
+masonryTest
+goodsTest_masonry
+galary_body **
+galary_body2 **
+selectTest *
+2 *
+
+
+var p=$(<p></p>).html("hello") 
+		p를 생성		텍스트노드
+$('body').append(p)
+
+
+<<미래에 만들어진 노드에 이벤트 연결하기>>
+
+$(document).on('click','li',function(){
+	alert('ok')
+})
+
+$(document).on('이벤트이름','미래에 만들어질 태그',함수)
+
+
+노드삭제
+$(a).remove()	=>a자신을 삭제
+$(a).empty()	=>a안에 있는 모든 후손을 삭제

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+  <style type="text/css">
+	.hong{
+		color: red;
+	}
+  </style>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+<script type="text/javascript">
+	//$(document).ready();	==> 줄여서 $();
+	$(function(){
+
+		setTimeout(function(){
+			var color=$(".hong").css("color");
+			alert(color);
+		},3000);
+	});
+</script>
+ </head>
+ <body>
+	<h1 class="hong">홍길동</h1>
+	<h1>이순신</h1>
+	<h1>유관순</h1>
+ </body>
+</html>

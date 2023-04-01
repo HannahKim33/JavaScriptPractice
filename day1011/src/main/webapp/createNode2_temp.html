@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+<script type="text/javascript">
+	var member=["사과","포도","바나나","체리","오렌지"]
+	$(function(){
+		for (i=0; i<member.length; i++){
+			$('<h1></h1>').html(member[i]).css({
+				backgroundColor: '#00AA00',
+				color: '#00CCCC'
+			}).appendTo('body')
+		}
+	})
+</script>
+</head>
+<body>
+
+</body>
+</html>

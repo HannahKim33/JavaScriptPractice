@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<script type="text/javascript">
+	/*
+		var member={
+			name:"홍길동",
+			age:20,
+			sayHello:function(){
+				alert("hello");
+			}
+		}
+		
+		for(i in member){
+			console.log(i, member[i]); //i=>속성, member[i]=>속성값 출력
+		}
+		
+		for (i in window){
+			console.log(i, "---->", window[i]);
+		}
+		*/
+		
+		window.onresize=function(){
+			var w=window.outerWidth;
+			var h=window.outerHeight;
+			var data="w:"+w+",h:"+h;
+			document.getElementById("info").innerHTML=data;
+		}
+		
+		window.onload=function(){
+			document.getElementById("btn").onclick=function(){
+				window.open("window_close.html","","width=400,height=300")
+			}
+		}
+	</script>
+</head>
+<body>
+	<div id="info"></div>
+	<hr>
+	<button id="btn">새창 열기</button>
+</body>
+</html>

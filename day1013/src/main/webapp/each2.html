@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+<script type="text/javascript">
+$(function(){
+	var data=["서울","경기도","경상북도","경상남도","강원도","전라남도","전라북도","충청도","제주도"]
+	$.each(data,function(){
+		var option=$('<option></option>').html(this)
+		$("#loc").append(option)
+	})
+})
+</script>
+</head>
+<body>
+	<select id="loc"></select>
+	<select></select>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css"> 
+	#wrap{
+		width:960px;
+		height:500px;
+		position: relative;
+	}
+	#man{
+		position:absolute;
+		left:500px;
+		top:400px;
+	}
+</style>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+<script type="text/javascript">
+$(function(){
+	
+	$('body').keydown(function(event){
+		var code=event.keyCode
+		var x=parseFloat($('#man').css("left"))
+		var y=parseFloat($('#man').css("top"))
+		
+		switch(code){
+		case 37: $("#man").css('left',(x-10)+'px');break;
+		case 38: $("#man").css('top',(y-10)+'px');break;
+		case 39: $("#man").css('left',(x+10)+'px');break;
+		case 40: $("#man").css('top',(y+10)+'px');break;
+		}
+	})
+})
+</script>
+</head>
+<body>
+	<div id="wrap">
+		<img id="man" src="./images/man.png" width='50' height='70'>
+	</div>
+</body>
+</html>

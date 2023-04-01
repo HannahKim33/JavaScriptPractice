@@ -1,0 +1,4 @@
+insert into dept values(60, '개발4팀', '판교');
+insert into dept values(70, '개발5팀', '판교');
+insert into dept values(80, '개발6팀', '판교');
+insert into dept values(90, '개발7팀', '판교');

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+  <script type="text/javascript">
+	function nextRandomInteger(limit){
+		return Math.round(Math.random()*limit);
+	}
+
+	var alphabet='ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+	function randomAlphabet(){
+		return alphabet.charAt(nextRandomInteger(25));
+	}
+
+	function randomSpeed(maxSpeed){
+		return Math.random()*maxSpeed-Math.random()*maxSpeed;
+	}
+	
+	function randomColor(){
+		var r=Math.round(Math.random()*255);
+		var g=Math.round(Math.random()*255);
+		var b=Math.round(Math.random()*255);
+		
+		var r16=(r).toString(16)
+		var g16=(g).toString(16)
+		var b16=(b).toString(16)
+		colorCode='#'+r16+g16+b16
+		return colorCode;
+		colsole.log(colorCode);
+	}
+
+	var canvasWidth=700;
+	var canvasHeight=500;
+
+	function MovingText(){
+		this.x=nextRandomInteger(700);
+		this.y=nextRandomInteger(500);
+		this.vX=randomSpeed(10);
+		this.vY=randomSpeed(10);
+
+		this.tag=document.createElement("h1");
+		this.tag.innerHTML=randomAlphabet();
+		this.tag.style.position="absolute";
+		this.tag.style.color=randomColor();
+		//this.tag.style.color=color_arr[nextRandomInteger(color_arr.length-1)];
+		document.body.appendChild(this.tag);
+	}
+
+	MovingText.prototype.move=function(){
+		if(this.x<0 || this.x>canvasWidth){this.vX*=-1;}
+		if(this.y<0 || this.y>canvasHeight){this.vY*=-1;}
+		this.x+=this.vX;
+		this.y+=this.vY;
+
+		this.tag.style.left=this.x+'px';
+		this.tag.style.top=this.y+'px';
+	}
+	
+
+
+	window.onload=function(){
+		var arr=[];
+		for (i=0; i<100; i++)
+		{
+			arr.push(new MovingText());
+		}
+		setInterval(function(){
+			for (i=0; i<arr.length; i++)
+			{
+				arr[i].move();
+			}
+		},1000/60);
+	}
+  </script>
+ </head>
+ <body>
+  
+ </body>
+</html>
